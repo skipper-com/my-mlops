@@ -2,3 +2,8 @@
 *.txt
 *.gz
 *.parquet
+/01_week/models/
+/01_week/data/
+/02_week/mlruns/
+/02_week/models/
+/02_week/data/
