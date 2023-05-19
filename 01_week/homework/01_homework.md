@@ -54,8 +54,9 @@ Now let's apply this model to the validation dataset (February 2022). What's the
 Answer: 7.79
 
 Your code (link to GitHub or other public code-hosting website). Remember: no code - no scores!
-ddd
+[https://github.com/skipper-com/my-mlops/tree/main/01_week](https://github.com/skipper-com/my-mlops/tree/main/01_week)
 
 
 Learning in public links
 Links to social media posts where you share your progress with others (LinkedIn, Twitter, etc). Use #mlopszoomcamp tag. The scores for this part will be capped at 7 point. Please make sure the posts are valid URLs starting with "https://"
+[https://www.linkedin.com/posts/alexander-pilugin_mlopszoomcamp-mlops-datatalkclub-activity-7064624343355404288-lo7v](https://www.linkedin.com/posts/alexander-pilugin_mlopszoomcamp-mlops-datatalkclub-activity-7064624343355404288-lo7v?utm_source=share&utm_medium=member_desktop)
