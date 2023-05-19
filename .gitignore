@@ -2,8 +2,9 @@
 *.txt
 *.gz
 *.parquet
+*.db
 /01_week/models/
-/01_week/data/
-/02_week/mlruns/
-/02_week/models/
-/02_week/data/
+/02_week/homework/mlruns/
+/02_week/homework/models/
+/02_week/homework/artifacts/
+pass.pass
