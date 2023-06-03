@@ -1,0 +1,54 @@
+{
+    "os": "Linux-5.19.0-1025-aws-x86_64-with-glibc2.35",
+    "python": "3.10.6",
+    "heartbeatAt": "2023-06-03T11:38:49.290198",
+    "startedAt": "2023-06-03T11:38:48.702324",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "--wandb_project",
+        "green-taxi",
+        "--wandb_entity",
+        "skipper-com",
+        "--data_artifact",
+        "skipper-com/green-taxi/NYC-Taxi:v0"
+    ],
+    "state": "running",
+    "program": "/home/ubuntu/my-mlops/02_week/wb/sweep.py",
+    "codePath": "02_week/wb/sweep.py",
+    "git": {
+        "remote": "https://github.com/skipper-com/my-mlops.git",
+        "commit": "078ef7eea292c8e3762901cf3018dcb6eef6d83f"
+    },
+    "email": "skipper-com@mail.ru",
+    "root": "/home/ubuntu/my-mlops",
+    "host": "ip-172-31-10-200",
+    "username": "ubuntu",
+    "executable": "/usr/bin/python3",
+    "cpu_count": 2,
+    "cpu_count_logical": 2,
+    "cpu_freq": {
+        "current": 2299.897,
+        "min": 0.0,
+        "max": 0.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2299.897,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2299.897,
+            "min": 0.0,
+            "max": 0.0
+        }
+    ],
+    "disk": {
+        "total": 28.89361572265625,
+        "used": 6.751487731933594
+    },
+    "memory": {
+        "total": 7.760272979736328
+    }
+}
