@@ -69,8 +69,8 @@ Now that we have obtained the optimal set of hyperparameters and trained the bes
 
 
 ## Your code (link to GitHub or other public code-hosting website). Remember: no code - no scores!
-ddd
+https://github.com/skipper-com/my-mlops/tree/main/02_week/wb
 
 
 ## Learning in public links
-Links to social media posts where you share your progress with others (LinkedIn, Twitter, etc). Use #mlopszoomcamp tag. The scores for this part will be capped at 7 point. Please make sure the posts are valid URLs starting with "https://"
+https://www.linkedin.com/posts/alexander-pilugin_mlopszoomcamp-mlops-wandb-activity-7070741715929714689-slwi?utm_source=share&utm_medium=member_desktop
