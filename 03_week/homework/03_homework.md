@@ -31,7 +31,7 @@ Download the February 2023 Green Taxi data and use it for your training data. Do
 - 12.02
 - 15.33
 - 5.37
-***Answer: 2.45***
+*** Answer: 5.37 ***
 
 
 ## Q5. Promote the best model to the model registry
