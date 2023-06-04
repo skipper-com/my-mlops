@@ -160,6 +160,7 @@ def main_flow_homework(
             msg="This proves email_send_message works!",
             email_to=email_address,
         )
+    print(subject)
 
 
 if __name__ == "__main__":

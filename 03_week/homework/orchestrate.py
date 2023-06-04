@@ -150,6 +150,17 @@ def main_flow_homework(
     # Train
     train_best_model(X_train, X_val, y_train, y_val, dv)
 
+    email_server_credentials = EmailServerCredentials.load("email-notify")
+    email_addresses = ["skipper-com@mail.ru"]
+    for email_address in email_addresses:
+        subject = email_send_message.with_options(name=f"email {email_address}").submit(
+            email_server_credentials=email_server_credentials,
+            subject="Example Flow Notification using Gmail",
+            msg="This proves email_send_message works!",
+            email_to=email_address,
+        )
+    print(subject)
+
 
 if __name__ == "__main__":
     main_flow()
