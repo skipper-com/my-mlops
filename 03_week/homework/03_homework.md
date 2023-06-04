@@ -1,4 +1,3 @@
-
 ## Q1. Human-readable name
 You’d like to give the first task, read_data a nicely formatted name. How can you specify a task name? Hint: look in the docs at https://docs.prefect.io or check out the doc string in a code editor.
 - @task(retries=3, retry_delay_seconds=2, name="Read taxi data")
@@ -25,6 +24,7 @@ Download the January 2023 Green Taxi data and use it for your training data. Dow
 - 9.12250
 *** Answer: 5.19931 ***
 
+
 ## Q4. RMSE (Markdown Artifact)
 Download the February 2023 Green Taxi data and use it for your training data. Download the March 2023 Green Taxi data and use it for your validation data. Create a Prefect Markdown artifact that displays the RMSE for the validation data. Create a deployment and run it. What’s the RMSE in the artifact to two decimal places ?
 - 9.71
@@ -45,21 +45,21 @@ What is the name of the pre-built prefect-email task function?
 - email_send_message
 - send_email
 - send_message
-***Answer: 2.185***
+***Answer: email_send_message***
 
 
-## Q6. Model metadata
-Now explore your best model in the model registry using UI. What information does the model registry contain about each model?
-* Version number
-* Source experiment
-* Model signature
-* All the above answers are correct
-***Answer: Version number***
+## Q6. Prefect Cloud
+The hosted Prefect Cloud lets you avoid running your own Prefect server and has automations that allow you to get notifications when certain events occur or don’t occur. Create a free forever Prefect Cloud account at app.prefect.cloud and connect your workspace to it following the steps in the UI when you sign up. Set up an Automation from the UI that will send yourself an email when a flow run completes. Run one of your existing deployments and check your email to see the notification. Make sure your active profile is pointing toward Prefect Cloud and make sure you have a worker active. What is the name of the second step in the Automation creation process?
+- Details
+- Trigger
+- Actions
+- The end
+*** Answer: Actions ***
 
 
 ## Your code (link to GitHub or other public code-hosting website). Remember: no code - no scores!
-ddd
+https://github.com/skipper-com/my-mlops/tree/main/03_week/homework
 
 
 ## Learning in public links
-Links to social media posts where you share your progress with others (LinkedIn, Twitter, etc). Use #mlopszoomcamp tag. The scores for this part will be capped at 7 point. Please make sure the posts are valid URLs starting with "https://"
+https://www.linkedin.com/posts/alexander-pilugin_mlopszoomcamp-mlops-prefect-activity-7071210209003597824-1GvQ?utm_source=share&utm_medium=member_desktop
