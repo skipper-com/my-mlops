@@ -1,4 +1,5 @@
 {
   "main-flow": "3_4_orchestrate.py:main_flow",
+  "main-flow-homework": "orchestrate.py:main_flow_homework",
   "main-flow-s3": "3_5_orchestrate_s3.py:main_flow_s3"
 }
