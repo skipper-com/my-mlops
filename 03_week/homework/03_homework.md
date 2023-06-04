@@ -23,25 +23,14 @@ Download the January 2023 Green Taxi data and use it for your training data. Dow
 - 5.19931
 - 8.89443
 - 9.12250
-***Answer: 10***
+*** Answer: 5.19931 ***
 
-
-Launch the tracking server locally for MLflow
-Now we want to manage the entire lifecycle of our ML model. In this step, you'll need to launch a tracking server. This way we will also have access to the model registry. 
-In case of MLflow, you need to:
-* launch the tracking server on your local machine,
-* select a SQLite db for the backend store and a folder called `artifacts` for the artifacts store.
-You should keep the tracking server running to work on the next three exercises that use the server.
-
-## Q4. Tune model hyperparameters
-Now let's try to reduce the validation error by tuning the hyperparameters of the `RandomForestRegressor` using `optuna`. We have prepared the script `hpo.py` for this exercise. Your task is to modify the script `hpo.py` and make sure that the validation RMSE is logged to the tracking server for each run of the hyperparameter optimization (you will need to add a few lines of code to the `objective` function) and run the script without passing any parameters. After that, open UI and explore the runs from the experiment called `random-forest-hyperopt` to answer the question below. Note: Don't use autologging for this exercise. The idea is to just log the information that you need to answer the question below, including:
-* the list of hyperparameters that are passed to the `objective` function during the optimization,
-* the RMSE obtained on the validation set (February 2022 data).
-What's the best validation RMSE that you got?
-* 1.85
-* 2.15
-* 2.45
-* 2.85
+## Q4. RMSE (Markdown Artifact)
+Download the February 2023 Green Taxi data and use it for your training data. Download the March 2023 Green Taxi data and use it for your validation data. Create a Prefect Markdown artifact that displays the RMSE for the validation data. Create a deployment and run it. What’s the RMSE in the artifact to two decimal places ?
+- 9.71
+- 12.02
+- 15.33
+- 5.37
 ***Answer: 2.45***
 
 
