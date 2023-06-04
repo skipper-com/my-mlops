@@ -1,7 +1,6 @@
 *.csv
 *.txt
 *.gz
-*.parquet
 *.db
 /01_week/models/
 /02_week/homework/mlruns/
