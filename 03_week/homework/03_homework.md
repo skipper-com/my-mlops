@@ -34,15 +34,17 @@ Download the February 2023 Green Taxi data and use it for your training data. Do
 *** Answer: 5.37 ***
 
 
-## Q5. Promote the best model to the model registry
-The results from the hyperparameter optimization are quite good. So, we can assume that we are ready to test some of these models in production. In this exercise, you'll promote the best model to the model registry. We have prepared a script called `register_model.py`, which will check the results from the previous step and select the top 5 runs. After that, it will calculate the RMSE of those models on the test set (March 2022 data) and save the results to a new experiment called `random-forest-best-models`.Your task is to update the script `register_model.py` so that it selects the model with the lowest RMSE on the test set and registers it to the model registry.
-Tips for MLflow:
-* you can use the method `search_runs` from the `MlflowClient` to get the model with the lowest RMSE,
-* to register the model you can use the method `mlflow.register_model` and you will need to pass the right `model_uri` in the form of a string that looks like this: `"runs:/<RUN_ID>/model"`, and the name of the model (make sure to choose a good one!). What is the test RMSE of the best model?
-* 1.885
-* 2.185
-* 2.555
-* 2.955
+## Q5. Emails
+It’s often helpful to be notified when something with your dataflow doesn’t work as planned. Create an email notification for to use with your own Prefect server instance. In your virtual environment, install the prefect-email integration with
+pip install prefect-email
+Make sure you are connected to a running Prefect server instance through your Prefect profile. See the docs if needed: https://docs.prefect.io/latest/concepts/settings/#configuration-profiles. Register the new block with your server with
+prefect block register -m prefect_email
+Remember that a block is a Prefect class with a nice UI form interface. Block objects live on the server and can be created and accessed in your Python code. See the docs for how to authenticate by saving your email credentials to a block and note that you will need an App Password to send emails with Gmail and other services. Follow the instructions in the docs. Create and save an EmailServerCredentials notification block. Use the credentials block to send an email. Test the notification functionality by running a deployment. 
+What is the name of the pre-built prefect-email task function?
+- send_email_message
+- email_send_message
+- send_email
+- send_message
 ***Answer: 2.185***
 
 
