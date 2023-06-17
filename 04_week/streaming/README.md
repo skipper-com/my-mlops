@@ -17,7 +17,7 @@ Links
 
 
 ```bash
-KINESIS_STREAM_INPUT=ride_events
+KINESIS_STREAM_INPUT=ride-events
 aws kinesis put-record \
     --stream-name ${KINESIS_STREAM_INPUT} \
     --partition-key 1 \
@@ -109,7 +109,7 @@ echo ${RESULT} | jq -r '.Records[0].Data' | base64 --decode
 
 ```bash
 export PREDICTIONS_STREAM_NAME="ride_predictions"
-export RUN_ID="e1efc53e9bd149078b0c12aeaa6365df"
+export RUN_ID="963d555a1f614713ae1ae1e12a77c875"
 export TEST_RUN="True"
 
 python test.py
@@ -123,7 +123,7 @@ docker build -t stream-model-duration:v1 .
 docker run -it --rm \
     -p 8080:8080 \
     -e PREDICTIONS_STREAM_NAME="ride_predictions" \
-    -e RUN_ID="e1efc53e9bd149078b0c12aeaa6365df" \
+    -e RUN_ID="963d555a1f614713ae1ae1e12a77c875" \
     -e TEST_RUN="True" \
     -e AWS_DEFAULT_REGION="eu-west-1" \
     stream-model-duration:v1
@@ -143,7 +143,7 @@ To use AWS CLI, you may need to set the env variables:
 docker run -it --rm \
     -p 8080:8080 \
     -e PREDICTIONS_STREAM_NAME="ride_predictions" \
-    -e RUN_ID="e1efc53e9bd149078b0c12aeaa6365df" \
+    -e RUN_ID="963d555a1f614713ae1ae1e12a77c875" \
     -e TEST_RUN="True" \
     -e AWS_ACCESS_KEY_ID="${AWS_ACCESS_KEY_ID}" \
     -e AWS_SECRET_ACCESS_KEY="${AWS_SECRET_ACCESS_KEY}" \
