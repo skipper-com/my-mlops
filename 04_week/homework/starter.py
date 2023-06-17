@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 import sys
 import boto3
-
+import os
 
 with open("model.bin", "rb") as f_in:
     dv, model = pickle.load(f_in)
@@ -36,14 +36,25 @@ y_pred = model.predict(X_val)
 
 # df["ride_id"] = f"{year:04d}/{month:02d}_" + df.index.astype("str")
 
-s3 = boto3.resource('s3',
-         aws_access_key_id=ACCESS_ID,
-         aws_secret_access_key= ACCESS_KEY)
+AWS_ACCESS_KEY_ID = os.getenv("AWS_ACCESS_KEY_ID")
+AWS_SECRET_ACCESS_KEY = os.getenv("AWS_SECRET_ACCESS_KEY")
+
+s3_client = boto3.client(
+    "s3",
+    aws_access_key_id=AWS_ACCESS_KEY_ID,
+    aws_secret_access_key=AWS_SECRET_ACCESS_KEY,
+)
 
 output_file = f"s3://dtc-mlops/4hw/taxi_yellow_{year:04d}-{month:02d}.parquet"
 df_result = pd.DataFrame()
 df_result["ride_id"] = f"{year:04d}/{month:02d}_" + df.index.astype("str")
 df_result["y_pred"] = y_pred
-df_result.to_parquet(output_file, engine="pyarrow", compression=None, index=False)
+df_result.to_parquet(
+    output_file,
+    engine="pyarrow",
+    compression=None,
+    index=False,
+    storage_options={"key": AWS_ACCESS_KEY_ID, "secret": AWS_SECRET_ACCESS_KEY},
+)
 
 print(np.mean(y_pred))

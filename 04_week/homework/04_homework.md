@@ -63,6 +63,7 @@ do stuff here
 This image already has a pickle file with a dictionary vectorizer and a model. You will need to use them. Important: don't copy the model to the docker image. You will need to use the pickle file already in the image. Now run the script with docker. What's the mean predicted duration for April 2022?
 docker build -t dtc-mlops-hw4_starter:v1 .
 docker run --rm dtc-mlops-hw4_starter:v1 2022 4
+
 - 7.92
 - 12.83
 - 17.92
@@ -80,7 +81,7 @@ docker tag mlops-zoomcamp-model:v1 svizor/zoomcamp-model:mlops-3.10.0-slim
 docker push svizor/zoomcamp-model:mlops-3.10.0-slim
 
 ## Your code (link to GitHub or other public code-hosting website). Remember: no code - no scores!
-https://github.com/skipper-com/my-mlops/tree/main/03_week/homework
+https://github.com/skipper-com/my-mlops/tree/main/04_week/homework
 
 
 ## Learning in public links
