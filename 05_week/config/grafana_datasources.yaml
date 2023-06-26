@@ -8,7 +8,7 @@ datasources:
     type: postgres
     access: proxy
     url: db:5432
-    database: test
+    database: homework
     user: postgres
     secureJsonData:
       password: 'qwerty123'
