@@ -41,7 +41,8 @@ Finally, let’s add panels with new added metrics to the dashboard. After we cu
 
 
 ## Your code (link to GitHub or other public code-hosting website). Remember: no code - no scores!
-
+https://github.com/skipper-com/my-mlops/tree/main/05_week/homework
 
 
 ## Learning in public links
+https://www.linkedin.com/posts/alexander-pilugin_mlopszoomcamp-evidentlyai-mlops-activity-7080810171358138368-5oRS?utm_source=share&utm_medium=member_desktop
