@@ -126,7 +126,7 @@ We can read from our localstack s3, but we also need to write to it. Create a fu
 
 
 ## Your code (link to GitHub or other public code-hosting website). Remember: no code - no scores!
-https://github.com/skipper-com/my-mlops/tree/main/05_week/homework
+https://github.com/skipper-com/my-mlops/tree/main/06_week/homework
 
 
 ## Learning in public links
