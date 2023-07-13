@@ -124,13 +124,10 @@ We can read from our localstack s3, but we also need to write to it. Create a fu
 - 81.22
 *** 31.51 ***
 
-## Running the test (ungraded)
-The rest is ready, but we need to write a shell script for doing that. Let's do that!
-
 
 ## Your code (link to GitHub or other public code-hosting website). Remember: no code - no scores!
 https://github.com/skipper-com/my-mlops/tree/main/05_week/homework
 
 
 ## Learning in public links
-https://www.linkedin.com/posts/alexander-pilugin_mlopszoomcamp-evidentlyai-mlops-activity-7080810171358138368-5oRS?utm_source=share&utm_medium=member_desktop
+https://www.linkedin.com/posts/alexander-pilugin_mlopszoomcamp-mlops-tests-activity-7085139325683687424-XM64?utm_source=share&utm_medium=member_desktop
