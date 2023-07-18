@@ -8,3 +8,4 @@
 /02_week/homework/artifacts/
 pass.pass
 *.parquet
+/06_week/code/infrastructure/.terraform/providers/registry.terraform.io/hashicorp/
