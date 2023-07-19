@@ -17,7 +17,7 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: "eu-west-1"
+          aws-region: "eu-central-1"
       - uses: hashicorp/setup-terraform@v2
         with:
           terraform_wrapper: false
@@ -25,13 +25,13 @@ jobs:
       # Define the infrastructure
       - name: TF plan
         id: tf-plan
-        working-directory: '06-best-practices/code/infrastructure'
+        working-directory: '06_week/code/infrastructure'
         run: |
           terraform init -backend-config="key=mlops-zoomcamp-prod.tfstate" -reconfigure && terraform plan -var-file=vars/prod.tfvars
 
       - name: TF Apply
         id: tf-apply
-        working-directory: '06-best-practices/code/infrastructure'
+        working-directory: '06_week/code/infrastructure'
         if: ${{ steps.tf-plan.outcome }} == 'success'
         run: |
           terraform apply -auto-approve -var-file=vars/prod.tfvars
@@ -47,7 +47,7 @@ jobs:
 
       - name: Build, tag, and push image to Amazon ECR
         id: build-image-step
-        working-directory: "06-best-practices/code"
+        working-directory: "06_week/code"
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           ECR_REPOSITORY: ${{ steps.tf-apply.outputs.ecr_repo }}
@@ -65,13 +65,14 @@ jobs:
       # In practice, you would also have a separate training pipeline to write new model artifacts to your Model Bucket in Prod.
 
         id: get-model-artifacts
-        working-directory: "06-best-practices/code"
+        working-directory: "06_week/code"
         env:
-          MODEL_BUCKET_DEV: "mlflow-models-alexey"
+          MODEL_BUCKET_DEV: "dtc-mlops"
           MODEL_BUCKET_PROD: ${{ steps.tf-apply.outputs.model_bucket }}
         run: |
           export RUN_ID=$(aws s3api list-objects-v2 --bucket ${MODEL_BUCKET_DEV} \
           --query 'sort_by(Contents, &LastModified)[-1].Key' --output=text | cut -f2 -d/)
+          export RUN_ID=963d555a1f614713ae1ae1e12a77c875
           aws s3 sync s3://${MODEL_BUCKET_DEV} s3://${MODEL_BUCKET_PROD}
           echo "::set-output name=run_id::${RUN_ID}"
 
@@ -86,12 +87,12 @@ jobs:
                     PREDICTIONS_STREAM_NAME=$PREDICTIONS_STREAM_NAME, MODEL_BUCKET=$MODEL_BUCKET, RUN_ID=$RUN_ID \
                     }"
 
-          STATE=$(aws lambda get-function --function-name $LAMBDA_FUNCTION --region "eu-west-1" --query 'Configuration.LastUpdateStatus' --output text)
+          STATE=$(aws lambda get-function --function-name $LAMBDA_FUNCTION --region "eu-central-1" --query 'Configuration.LastUpdateStatus' --output text)
               while [[ "$STATE" == "InProgress" ]]
               do
-                  echo "sleep 5sec ...."
+                  echo "sleep 5 sec ...."
                   sleep 5s
-                  STATE=$(aws lambda get-function --function-name $LAMBDA_FUNCTION --region "eu-west-1" --query 'Configuration.LastUpdateStatus' --output text)
+                  STATE=$(aws lambda get-function --function-name $LAMBDA_FUNCTION --region "eu-central-1" --query 'Configuration.LastUpdateStatus' --output text)
                   echo $STATE
               done
 
